@@ -1,0 +1,166 @@
+html{
+    height: 100%;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    background-image: url(../images/habit_content.jpg);
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+#logo{
+    font-weight: bold;
+    font-size: larger;
+}
+.website-content{
+    margin: 0%;
+    border: none;
+    padding: 0%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.content{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    z-index: 1;
+}
+
+
+
+
+/* habit menu */
+.habit-menu{
+    padding: 0.7rem;
+}
+
+#content_habit_form{
+    width: 100%;
+    height: 100%;
+}
+
+#form-habit{
+    background-image: url(../images/habit_menu.jpg);
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    margin-top: 1rem;
+    border: 1px solid whitesmoke;
+    width: 100%;
+    display: grid;
+    grid-row: auto;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 20px 50px rgba(167, 214, 248, 0.7);
+    z-index: 1;
+}
+
+
+
+
+
+/* Habit content */
+.habit-content{
+    padding: 2rem;
+    height: 100vh;
+    border: 0;
+    margin: 0;
+    border-left: 5px solid white;
+}
+#user_name{
+   font-weight: bold;
+   color: rgb(0, 0, 0);
+}
+#dashB{
+    color: white;
+    font-weight: normal;
+}
+
+.card{
+    background-image: url(../images/card.jpg);
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+.card-title{
+    display: flex;
+    position: relative;
+}
+.btn:focus {
+    box-shadow: none;
+}
+
+#habit_name{
+    font-weight: bold;
+    color: rgb(25, 0, 255)
+}
+#habit_desc{
+    font-weight: bold;
+}
+.habit_info{
+    color: #f88407;
+    
+    font-weight: bold;
+}
+
+/* LIST ITEMS */
+
+
+
+/* streak */
+.back_to_dashboard{
+    margin: 1rem;
+}
+#back_dashB{
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+#streak_details{
+    margin-top: 10%;
+    margin-left: 15%;
+    background-color: rgba(9, 9, 9, 0.775);
+    padding: 1rem;
+    position: absolute;
+    border: 1px solid white;
+    border-radius: 1rem;
+    z-index: 0;
+}
+hr{
+    border: 1px solid white;
+}
+#seven_days{
+    margin-right: 10px;
+    padding: 1rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* Seven streak buttons */
+#one{
+    margin-left: 3.4rem;
+}
+#two{
+    margin-left: 5rem;
+}
+#three{
+    margin-left: 6rem;
+}
+#four{
+    margin-left: 5.5rem;
+}
+#five{
+    margin-left: 5.5rem;
+}
+#six{
+    margin-left: 6rem;
+}
+#seven{
+    margin-left: 6rem;
+}
+.streak_info{
+    margin-left: 2rem;
+   
+}

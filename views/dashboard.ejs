@@ -1,0 +1,102 @@
+
+<div class="content">
+    <!-- // BTUUON TO CREATE A HABIT -->
+    <div class="habit-menu">
+        <button class="btn btn-success" id="new_habit">Create Habit</button>
+        <%- include('./partials/messages'); %>
+        <!-- // CREATE HABIT FORM-->
+        <div id="content_habit_form">
+            <form action="/habit/create-habit" method="post" id="form-habit">
+                <h2 class="text-info p-2">Create Habit</h2>
+                <div class="row">
+    
+                    <!-- Habit -->
+                    <div class="input-group col-lg-12 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fas fa-heading"></i>
+                            </span>
+                        </div>
+                        <input id="habit" type="text" name="habit" placeholder="Habit" value="<%= typeof habit != 'undefined' ? habit : '' %>" class="form-control bg-white border-left-0 border-md">
+                    </div>
+    
+    
+                    <!-- habit desc -->
+                    <div class="input-group col-lg-12 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fas fa-align-justify"></i>
+                            </span>
+                        </div>
+                        <input id="desc" type="text" name="desc" placeholder="Habit Description" value="<%= typeof desc != 'undefined' ? desc : '' %>" class="form-control bg-white border-left-0 border-md">
+                    </div>
+                     <!-- habit desc -->
+                     <div class="input-group col-lg-12 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="far fa-calendar-times"></i>
+                            </span>
+                        </div>
+                        <select name="frequency" class="form-control bg-white border-left-0 border-md mdb-select md-form colorful-select dropdown-primary">
+                            <option>Twice a week</option>
+                            <option selected>Daily</option>
+                            <option>Weekly</option>
+                        </select>
+                    </div> 
+    
+                    <!-- Submit Button -->
+                    <div class="form-group col-lg-6 mx-auto mb-0">
+                        <button type="submit" class="btn btn-success btn-block py-2" id="create_habit"><span class="font-weight-bold">Create</span></button>
+                    </div>
+                    <div class="form-group col-lg-6 mx-auto mb-0">
+                        <button type="submit" class="btn btn-danger btn-block py-2" id="cancel_habit"><span class="font-weight-bold">Cancel</span></button>
+                    </div>
+                </div>    
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Habit CONTENT -->
+    <div class="habit-content">
+        <h1 id="user_name"><%= user.name %><span id="dashB"> Dashbbord</span></h1>
+
+        <!-- DISPLAY HABIT -->
+        <div class="row">
+            <% for(let i of Habits){ %>
+                <div class="card bg-light text-dark m-3">
+                    <div class="card-body">
+                        <div class="card-title">   
+                            <h3 id="habit_name"><%= i.habit %></h3>
+                            
+                            <form action="/habit/update-habit/<%=i._id%>/one/<%=i.days.one %>" method="POST"> 
+                                <button class="btn" type="submit">
+                                    <% if(i.days.one =='yes'){ %>
+                                        <i class="fas fa-check-circle" style="color: green; font-size: 1.5rem;"></i>
+                                        <% } else if(i.days.one =='no'){ %>
+                                        <i class="fas fa-times-circle" style="color: red; font-size: 1.5rem;"></i>
+                                        <% } else { %>
+                                        <i class="fas fa-exclamation-circle" style="color: grey; font-size: 1.5rem;"></i>
+                                    <% } %>
+                                </button>
+                            </form> 
+                           
+                        </div>
+                        <p class="card-text" id="habit_desc"><%= i.desc %></p>
+                        <p class="habit_info">Date: <span style="color: black;"><%= i.date %></span></p> 
+                        <p class="habit_info">Frequency: <span style="color: black"><%= i.frequency %></span></p> 
+                        <p class="habit_info">Streak: <span style="color: black"><%= i.streak%> /7</span></p>
+                        <a href="/habit/delete-habit/<%=i._id%>" class="btn btn-danger m-2">Remove</a>
+                        <a href="/habit/streak/<%=i._id%>" class="btn btn-warning" id="streak">Streak</a>
+                    </div>
+                  </div>    
+            <% } %>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+

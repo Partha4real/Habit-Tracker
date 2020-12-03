@@ -1,0 +1,121 @@
+<div class="back_to_dashboard">
+    <a href="/user/dashboard" id="back_dashB"><span id="link_text"><i class="fas fa-home"></i> Dashboard</span></a>
+</div>
+<!-- Last seven days -->
+<div id="streak_details">
+    <h3 class="text-info m-2 p-2"><b><%= Habits.habit %></b></h3>
+    <ul class="list-inline">
+        <li class="list-inline-item" id="list-streak"></li>
+            <% for (let i = 0; i < 7; i++) { %>
+                <span id="seven_days"><%= today.subtract(i, 'days').format('ddd, MMM Do') %></span>             
+            <% } %>
+        </li>
+    </ul>
+    <hr>
+    <ul class="list-inline">
+        <li class="list-inline-item">
+            <form action="/habit/update-habit/<%=Habits._id%>/one/<%=Habits.days.one %>" method="POST"> 
+                <button class="btn" type="submit" id="one">
+                    <% if(Habits.days.one =='yes'){ %>
+                        <i class="fas fa-check-circle" style="color: green; font-size: 1.5rem;"></i>
+                        <% } else if(Habits.days.one =='no'){ %>
+                        <i class="fas fa-times-circle" style="color: red; font-size: 1.5rem;"></i>
+                        <% } else { %>
+                        <i class="fas fa-exclamation-circle" style="color: grey; font-size: 1.5rem;"></i>
+                    <% } %>
+                </button>
+            </form>
+        </li>
+        <li class="list-inline-item">
+            <form action="/habit/update-habit/<%=Habits._id%>/two/<%=Habits.days.two %>" method="POST"> 
+                <button class="btn" type="submit" id="two">
+                    <% if(Habits.days.two =='yes'){ %>
+                        <i class="fas fa-check-circle" style="color: green; font-size: 1.5rem;"></i>
+                        <% } else if(Habits.days.two =='no'){ %>
+                        <i class="fas fa-times-circle" style="color: red; font-size: 1.5rem;"></i>
+                        <% } else { %>
+                        <i class="fas fa-exclamation-circle" style="color: grey; font-size: 1.5rem;"></i>
+                    <% } %>
+                </button>
+            </form> 
+        </li>
+        <li class="list-inline-item">
+            <form action="/habit/update-habit/<%=Habits._id%>/three/<%=Habits.days.three %>" method="POST"> 
+                <button class="btn" type="submit" id="three">
+                    <% if(Habits.days.three =='yes'){ %>
+                        <i class="fas fa-check-circle" style="color: green; font-size: 1.5rem;"></i>
+                        <% } else if(Habits.days.three =='no'){ %>
+                        <i class="fas fa-times-circle" style="color: red; font-size: 1.5rem;"></i>
+                        <% } else { %>
+                        <i class="fas fa-exclamation-circle" style="color: grey; font-size: 1.5rem;"></i>
+                    <% } %>
+                </button>
+            </form>
+        </li>
+        <li class="list-inline-item">
+            <form action="/habit/update-habit/<%=Habits._id%>/four/<%=Habits.days.four %>" method="POST"> 
+                <button class="btn" type="submit" id="four">
+                    <% if(Habits.days.four =='yes'){ %>
+                        <i class="fas fa-check-circle" style="color: green; font-size: 1.5rem;"></i>
+                        <% } else if(Habits.days.four =='no'){ %>
+                        <i class="fas fa-times-circle" style="color: red; font-size: 1.5rem;"></i>
+                        <% } else { %>
+                        <i class="fas fa-exclamation-circle" style="color: grey; font-size: 1.5rem;"></i>
+                    <% } %>
+                </button>
+            </form> 
+        </li>
+        <li class="list-inline-item">
+            <form action="/habit/update-habit/<%=Habits._id%>/five/<%=Habits.days.five %>" method="POST"> 
+                <button class="btn" type="submit" id="five">
+                    <% if(Habits.days.five =='yes'){ %>
+                        <i class="fas fa-check-circle" style="color: green; font-size: 1.5rem;"></i>
+                        <% } else if(Habits.days.five =='no'){ %>
+                        <i class="fas fa-times-circle" style="color: red; font-size: 1.5rem;"></i>
+                        <% } else { %>
+                        <i class="fas fa-exclamation-circle" style="color: grey; font-size: 1.5rem;"></i>
+                    <% } %>
+                </button>
+            </form> 
+        </li>
+        <li class="list-inline-item">
+            <form action="/habit/update-habit/<%=Habits._id%>/six/<%=Habits.days.six %>" method="POST"> 
+                <button class="btn" type="submit" id="six">
+                    <% if(Habits.days.six =='yes'){ %>
+                        <i class="fas fa-check-circle" style="color: green; font-size: 1.5rem;"></i>
+                        <% } else if(Habits.days.six =='no'){ %>
+                        <i class="fas fa-times-circle" style="color: red; font-size: 1.5rem;"></i>
+                        <% } else { %>
+                        <i class="fas fa-exclamation-circle" style="color: grey; font-size: 1.5rem;"></i>
+                    <% } %>
+                </button>
+            </form>
+        </li>
+        <li class="list-inline-item">
+            <form action="/habit/update-habit/<%=Habits._id%>/seven/<%=Habits.days.seven %>" method="POST"> 
+                <button class="btn" type="submit" id="seven">
+                    <% if(Habits.days.seven =='yes'){ %>
+                        <i class="fas fa-check-circle" style="color: green; font-size: 1.5rem;"></i>
+                        <% } else if(Habits.days.seven =='no'){ %>
+                        <i class="fas fa-times-circle" style="color: red; font-size: 1.5rem;"></i>
+                        <% } else { %>
+                        <i class="fas fa-exclamation-circle" style="color: grey; font-size: 1.5rem;"></i>
+                    <% } %>
+                </button>
+            </form> 
+        </li>
+    </ul>
+    <hr>
+    <ul class="list-inline">
+        <li class="list-inline-item streak_info">
+            <p class="habit_info">Date: <span style="color: rgb(255, 255, 255);"> <%= Habits.date %></span></p> 
+        </li>
+        <li class="list-inline-item streak_info">
+            <p class="habit_info">Frequency: <span style="color: rgb(255, 255, 255)"> <%= Habits.frequency %></span></p> 
+        </li>
+        <li class="list-inline-item">
+            <p class="habit_info streak_info">Streak: <span style="color: rgb(255, 255, 255)"> <%= Habits.streak%> /7</span></p>
+        </li>
+    </ul>
+    
+</div>
